@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script type="text/javascript" th:src="${base}+'/jquery/jquery-1.8.0.min.js'"></script>
+	<script type="text/javascript" th:src="${base}+'/common.js'"></script>
+	<script th:src="${base}+'/layer/layer.js'"></script>
+	<link th:href="${base}+'/fontAwesome/css/font-awesome.min.css'" rel="stylesheet" />
+	<script type="text/javascript">
+		$(function(){
+			
+			$Common.loadEasy(); //加载所有需要的easyUI资源文件
+			console.log("根目录:"+$Common.basePath());//获取项目根目录方法
+			console.log("UUID:"+$Common.uuid());	//UUID生成
+			console.log("字符串超出省略:"+$Common.cutstr("abcdhgehgsl",6));//字符串超出省略
+			console.log("日期格式化:"+$Common.dateFormat("yyyy-MM-dd hh:mm:ss 星期w 第q季度",new Date()));//格式化日期 DateFormat('yyyy_MM_dd hh:mm:ss:SS 星期w 第q季度')
+			console.log("设置cookie值 :"+$Common.setCookie("name","tencent",1));////设置cookie值 
+			console.log("获取cookie值:"+$Common.getCookie("name"));////获取cookie值
+			//console.log("加入收藏夹 :"+$Common.addFavorite("www.qq.com","腾讯QQ"));//加入收藏夹 
+			console.log("是否移动设备:"+$Common.isMobileUserAgent());///判断是否移动设备访问 
+			console.log("是否网址:"+$Common.isURL("www.wonderGroup.com"));//完美判断是否为网址 
+			console.log("随机数时间戳:"+$Common.uniqueId());//随机数时间戳 
+			console.log("获取网页滚动位置:"+$Common.getScrollXY());//获取网页被卷去的位置
+			console.log("匹配国内电话号码:"+$Common.isTellphone("021-87888822"));//匹配国内电话号码
+			console.log("是否移动电话:"+$Common.isMobile("13800138000"));//是否移动电话
+			console.log("是否身份证:"+$Common.isIdcard("51072219210227871A"));//是否身份证
+			console.log("是否邮箱:"+$Common.isEmail("12345@qq.com"));//是否邮箱
+			console.log("数字格式化:"+$Common.numberFrmat("3.14192653",'3','.'));//获取项目根目录方法
+
+			//弹出一个页面层
+			$('#test').on('click', function(){
+			  layer.open({
+			  type: 1,
+			  area: ['600px', '360px'],
+			  shadeClose: true, //点击遮罩关闭
+			  content: '<div style="padding:20px;">自定义内容</div>'
+			  });
+			});
+		});
+	</script>
+</head>
+<body>
+<h1>main</h1>
+<a href="javascript:void(0)" id="test">layer弹出层</a>
+<div class="list-group">
+  <a class="list-group-item" href="#"><i class="fa fa-home fa-fw"></i>&nbsp; Home</a>
+  <a class="list-group-item" href="#"><i class="fa fa-book fa-fw"></i>&nbsp; Library</a>
+  <a class="list-group-item" href="#"><i class="fa fa-pencil fa-fw"></i>&nbsp; Applications</a>
+  <a class="list-group-item" href="#"><i class="fa fa-cog fa-fw"></i>&nbsp; Settings</a>
+</div>
+
+<div style="margin:10px 0;">
+	<a href="#" class="easyui-linkbutton" onclick="alert1()">Alert</a>
+	<a href="#" class="easyui-linkbutton" onclick="alert2()">Error</a>
+	<a href="#" class="easyui-linkbutton" onclick="alert3()">Info</a>
+	<a href="#" class="easyui-linkbutton" onclick="alert4()">Question</a>
+	<a href="#" class="easyui-linkbutton" onclick="alert5()">Warning</a>
+</div>
+<script>
+	function alert1(){
+		$.messager.alert('My Title','Here is a message!');
+	}
+	function alert2(){
+		$.messager.alert('My Title','Here is a error message!','error');
+	}
+	function alert3(){
+		$.messager.alert('My Title','Here is a info message!','info');
+	}
+	function alert4(){
+		$.messager.alert('My Title','Here is a question message!','question');
+	}
+	function alert5(){
+		$.messager.alert('My Title','Here is a warning message!','warning');
+	}
+</script>
+	
+<div id="p" class="easyui-panel" title="My Panel"
+    style="width:500px;height:150px;padding:10px;background:#fafafa;"
+    data-options="iconCls:'icon-save',closable:true,
+    collapsible:true,minimizable:true,maximizable:true">
+    <p>panel content.</p>
+    <p>panel content.</p>
+</div>
+
+<div id="tt" class="easyui-tabs" style="width:500px;height:250px;">
+    <div title="Tab1" style="padding:20px;display:none;">
+		tab1
+    </div>
+    <div title="Tab2" data-options="closable:true" style="overflow:auto;padding:20px;display:none;">
+		tab2
+    </div>
+    <div title="Tab3" data-options="iconCls:'icon-reload',closable:true" style="padding:20px;display:none;">
+		tab3
+    </div>
+</div>
+
+<div id="aa" class="easyui-accordion" style="width:300px;height:200px;">
+    <div title="Title1" data-options="iconCls:'icon-save'" style="overflow:auto;padding:10px;">
+		<h3 style="color:#0099FF;">Accordion for jQuery</h3>
+		<p>Accordion is a part of easyui framework for jQuery.
+		It lets you define your accordion component on web page more easily.</p>
+    </div>
+    <div title="Title2" data-options="iconCls:'icon-reload',selected:true" style="padding:10px;">
+		content2
+    </div>
+    <div title="Title3">
+		content3
+    </div>
+</div>
+
+<a href="javascript:void(0)" id="mb" class="easyui-menubutton"
+    data-options="menu:'#mm',iconCls:'icon-edit'">Edit</a>
+<div id="mm" style="width:150px;">
+    <div data-options="iconCls:'icon-undo'">Undo</div>
+    <div data-options="iconCls:'icon-redo'">Redo</div>
+    <div class="menu-sep"></div>
+    <div>Cut</div>
+    <div>Copy</div>
+    <div>Paste</div>
+    <div class="menu-sep"></div>
+    <div data-options="iconCls:'icon-remove'">Delete</div>
+    <div>Select All</div>
+</div>
+
+<div id="cc" class="easyui-layout" style="width:600px;height:400px;">
+    <div data-options="region:'north',title:'North Title',split:true" style="height:100px;"></div>
+    <div data-options="region:'south',title:'South Title',split:true" style="height:100px;"></div>
+    <div data-options="region:'east',title:'East',split:true" style="width:100px;"></div>
+    <div data-options="region:'west',title:'West',split:true" style="width:100px;"></div>
+    <div data-options="region:'center',title:'center title'" style="padding:5px;background:#eee;"></div>
+</div>
+
+<div style="padding:5px;background:#fafafa;width:500px;border:1px solid #ccc">
+	<a href="#" class="easyui-linkbutton" iconCls="icon-cancel">Cancel</a>
+	<a href="#" class="easyui-linkbutton" iconCls="icon-reload">Refresh</a>
+	<a href="#" class="easyui-linkbutton" iconCls="icon-search">Query</a>
+	<a href="#" class="easyui-linkbutton">text button</a>
+	<a href="#" class="easyui-linkbutton" iconCls="icon-print">Print</a>
+</div>
+
+<input id="vv" class="easyui-validatebox" data-options="required:true,validType:'email'" />
+
+<select id="cc" class="easyui-combobox" name="dept" style="width:200px;">
+    <option value="aa">aitem1</option>
+    <option>bitem2</option>
+    <option>bitem3</option>
+    <option>ditem4</option>
+    <option>eitem5</option>
+</select>
+
+<div id="cc" class="easyui-calendar" style="width:180px;height:180px;"></div>
+
+<div id="win" class="easyui-window" title="My Window" style="width:600px;height:400px"
+    data-options="iconCls:'icon-save',modal:true">
+    Window Content
+</div>
+
+
+<table class="easyui-datagrid">
+    <thead>
+		<tr>
+			<th data-options="field:'code'">Code</th>
+			<th data-options="field:'name'">Name</th>
+			<th data-options="field:'price'">Price</th>
+		</tr>
+    </thead>
+    <tbody>
+		<tr>
+			<td>001</td><td>name1</td><td>2323</td>
+		</tr>
+		<tr>
+			<td>002</td><td>name2</td><td>4612</td>
+		</tr>
+	</tbody>
+</table>
+
+</body>
+</html>
