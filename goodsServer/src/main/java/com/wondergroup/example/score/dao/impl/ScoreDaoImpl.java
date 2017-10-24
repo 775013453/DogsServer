@@ -54,7 +54,7 @@ public class ScoreDaoImpl implements ScoreDao{
 	@Override
 	public List<Score> getAllList() {
 		StringBuffer hql=new StringBuffer();
-		hql.append("from score u where 1=1");
+		hql.append("from Score u where 1=1");
 		List<Score> list=new ArrayList<Score>();			
 		Query query = getSession().createQuery(hql.toString());
 		list=query.list();
@@ -78,7 +78,7 @@ public class ScoreDaoImpl implements ScoreDao{
 	@Override
 	public Map<String,Object> getList(Score entity,Integer page,Integer rows) {
 		StringBuffer hql=new StringBuffer();
-		hql.append("from score u where 1=1 ");			
+		hql.append("from Score u where 1=1 ");			
 		List<Score> list=new ArrayList<Score>();
 		Query query = getSession().createQuery(hql.toString());		
 		Map<String,Object> map=new HashMap<String,Object>();
@@ -159,7 +159,7 @@ public class ScoreDaoImpl implements ScoreDao{
 	@Override
 	public Map<String,Object> getScopeList(String entityList,Integer page,Integer rows) {
 		StringBuffer hql=new StringBuffer();
-		hql.append("from score u where 1=1 ");	
+		hql.append("from Score u where 1=1 ");	
 		Map<String,Object> map=new HashMap<String,Object>();
 		if(entityList!=null){
 			hql.append("and u.entityBm in (:bms)");

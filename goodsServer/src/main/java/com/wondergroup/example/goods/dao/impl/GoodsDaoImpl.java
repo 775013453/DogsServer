@@ -54,7 +54,7 @@ public class GoodsDaoImpl implements GoodsDao{
 	@Override
 	public List<Goods> getAllList() {
 		StringBuffer hql=new StringBuffer();
-		hql.append("from goods u where 1=1");
+		hql.append("from Goods u where 1=1");
 		List<Goods> list=new ArrayList<Goods>();			
 		Query query = getSession().createQuery(hql.toString());
 		list=query.list();
@@ -78,7 +78,7 @@ public class GoodsDaoImpl implements GoodsDao{
 	@Override
 	public Map<String,Object> getList(Goods entity,Integer page,Integer rows) {
 		StringBuffer hql=new StringBuffer();
-		hql.append("from goods u where 1=1 ");
+		hql.append("from Goods u where 1=1 ");
 		if(entity.getGoodsName()!=null){
 			hql.append("and u.goodsName='"+entity.getGoodsName()+"'");
 		}
@@ -164,7 +164,7 @@ public class GoodsDaoImpl implements GoodsDao{
 	@Override
 	public Map<String,Object> getScopeList(String entityList,Integer page,Integer rows) {
 		StringBuffer hql=new StringBuffer();
-		hql.append("from goods u where 1=1 ");	
+		hql.append("from Goods u where 1=1 ");	
 		Map<String,Object> map=new HashMap<String,Object>();
 		if(entityList!=null){
 			hql.append("and u.entityBm in (:bms)");

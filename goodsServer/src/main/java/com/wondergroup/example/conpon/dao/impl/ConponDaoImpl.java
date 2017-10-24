@@ -54,7 +54,7 @@ public class ConponDaoImpl implements ConponDao{
 	@Override
 	public List<Conpon> getAllList() {
 		StringBuffer hql=new StringBuffer();
-		hql.append("from conpon u where 1=1");
+		hql.append("from Conpon u where 1=1");
 		List<Conpon> list=new ArrayList<Conpon>();			
 		Query query = getSession().createQuery(hql.toString());
 		list=query.list();
@@ -78,7 +78,7 @@ public class ConponDaoImpl implements ConponDao{
 	@Override
 	public Map<String,Object> getList(Conpon entity,Integer page,Integer rows) {
 		StringBuffer hql=new StringBuffer();
-		hql.append("from conpon u where 1=1 ");			
+		hql.append("from Conpon u where 1=1 ");			
 		List<Conpon> list=new ArrayList<Conpon>();
 		Query query = getSession().createQuery(hql.toString());		
 		Map<String,Object> map=new HashMap<String,Object>();
@@ -159,7 +159,7 @@ public class ConponDaoImpl implements ConponDao{
 	@Override
 	public Map<String,Object> getScopeList(String entityList,Integer page,Integer rows) {
 		StringBuffer hql=new StringBuffer();
-		hql.append("from conpon u where 1=1 ");	
+		hql.append("from Conpon u where 1=1 ");	
 		Map<String,Object> map=new HashMap<String,Object>();
 		if(entityList!=null){
 			hql.append("and u.entityBm in (:bms)");

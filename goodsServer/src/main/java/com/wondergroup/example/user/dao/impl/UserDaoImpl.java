@@ -54,7 +54,7 @@ public class UserDaoImpl implements UserDao{
 	@Override
 	public List<User> getAllList() {
 		StringBuffer hql=new StringBuffer();
-		hql.append("from user u where 1=1");
+		hql.append("from User u where 1=1");
 		List<User> list=new ArrayList<User>();			
 		Query query = getSession().createQuery(hql.toString());
 		list=query.list();
@@ -78,7 +78,7 @@ public class UserDaoImpl implements UserDao{
 	@Override
 	public Map<String,Object> getList(User entity,Integer page,Integer rows) {
 		StringBuffer hql=new StringBuffer();
-		hql.append("from user u where 1=1 ");			
+		hql.append("from User u where 1=1 ");			
 		List<User> list=new ArrayList<User>();
 		Query query = getSession().createQuery(hql.toString());		
 		Map<String,Object> map=new HashMap<String,Object>();
@@ -159,7 +159,7 @@ public class UserDaoImpl implements UserDao{
 	@Override
 	public Map<String,Object> getScopeList(String entityList,Integer page,Integer rows) {
 		StringBuffer hql=new StringBuffer();
-		hql.append("from user u where 1=1 ");	
+		hql.append("from User u where 1=1 ");	
 		Map<String,Object> map=new HashMap<String,Object>();
 		if(entityList!=null){
 			hql.append("and u.entityBm in (:bms)");
