@@ -54,7 +54,7 @@ public class RecommendationDaoImpl implements RecommendationDao{
 	@Override
 	public List<Recommendation> getAllList() {
 		StringBuffer hql=new StringBuffer();
-		hql.append("from Recommendation u where 1=1");
+		hql.append("from Recommendation u where 1=1 and u.used=1");
 		List<Recommendation> list=new ArrayList<Recommendation>();			
 		Query query = getSession().createQuery(hql.toString());
 		list=query.list();
