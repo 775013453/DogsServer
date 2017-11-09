@@ -31,6 +31,14 @@ public class Orders implements Serializable{
     private  String id;
     
   
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	@Column(name="userId",nullable=true,unique=false)
     private  String userId;  
   
