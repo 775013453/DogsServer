@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import ${package}.entity.${className};
+import ${entityPath}.entity.${className};
 import ${package}.service.${className}Service;
 import com.wondergroup.example.util.JacksonUtil;
 

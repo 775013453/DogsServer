@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import ${package}.dao.${className}Dao;
-import ${package}.entity.${className};
+import ${entityPath}.entity.${className};
 
 /**
   * @ClassName: ${className}DaoImpl
@@ -39,7 +39,6 @@ public class ${className}DaoImpl implements ${className}Dao{
 	protected SessionFactory sessionFactory;	
 	  
 	@SuppressWarnings("unchecked")
-	@Override
 	public List<${className}> getAllList() {
 		StringBuffer hql=new StringBuffer();
 		hql.append("from ${className} u where 1=1");
@@ -63,7 +62,6 @@ public class ${className}DaoImpl implements ${className}Dao{
 	  * @throws
 	  */
 	@SuppressWarnings("unchecked")
-	@Override
 	public Map<String,Object> getList(${className} entity,Integer page,Integer rows) {
 		StringBuffer hql=new StringBuffer();
 		hql.append("from ${className} u where 1=1 ");			
@@ -92,7 +90,6 @@ public class ${className}DaoImpl implements ${className}Dao{
 	  * @param ${className}
 	  * @throws
 	  */
-	@Override
 	public void add(${className} entity) {
 		// TODO Auto-generated method stub
 		sessionFactory.openSession().save(entity);		
@@ -108,7 +105,6 @@ public class ${className}DaoImpl implements ${className}Dao{
 	  * @param ${className}
 	  * @throws
 	  */
-	@Override
 	public void update(${className} entity) {
 		// TODO Auto-generated method stub
 		sessionFactory.openSession().saveOrUpdate(entity);
@@ -124,7 +120,6 @@ public class ${className}DaoImpl implements ${className}Dao{
 	  * @param ${className}
 	  * @throws
 	  */
-	@Override
 	public void delete(${className} entity) {
 		// TODO Auto-generated method stub
 		sessionFactory.openSession().delete(entity);
@@ -144,7 +139,6 @@ public class ${className}DaoImpl implements ${className}Dao{
 	  * @throws
 	  */
 	@SuppressWarnings({ "unchecked" })
-	@Override
 	public Map<String,Object> getScopeList(String entityList,Integer page,Integer rows) {
 		StringBuffer hql=new StringBuffer();
 		hql.append("from ${className} u where 1=1 ");	

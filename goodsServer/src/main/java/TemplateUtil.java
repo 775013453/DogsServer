@@ -88,7 +88,9 @@ public class TemplateUtil {
 		        FileOutputStream fos = new  FileOutputStream(file);   	         
   
 		        Map<String, Object> data = new  HashMap<String, Object>();  
-		        data.put("package",pacStr);    
+		        String[] entity=pacStr.split("\\.");
+		        data.put("package",pacStr);
+		        data.put("entityPath",entity[0]+"."+entity[1]+"."+entity[2]);
 		        data.put("className",className);  	          
 		        template.process(data, new  OutputStreamWriter(fos,"utf-8" ));    
 		        fos.flush();  

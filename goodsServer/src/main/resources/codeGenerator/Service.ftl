@@ -3,7 +3,7 @@ package ${package}.service;
 import java.util.List;
 import java.util.Map;
 
-import ${package}.entity.${className};
+import ${entityPath}.entity.${className};
 
 /**
   * @ClassName: ${className}Service

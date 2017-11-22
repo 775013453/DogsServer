@@ -3,7 +3,7 @@ package ${package}.dao;
 import java.util.List;
 import java.util.Map;
 
-import ${package}.entity.${className};
+import ${entityPath}.entity.${className};
 
 /**
   * @ClassName: ${className}Dao
