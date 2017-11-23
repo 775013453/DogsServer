@@ -16,9 +16,9 @@ import org.springframework.stereotype.Controller;
 
 import com.wondergroup.example.filter.HttpReqFilter;
 
-@EnableAutoConfiguration
+@EnableAutoConfiguration //自动载入应用程序所需的所有Bean
 @Controller
-@ComponentScan(basePackages={"com.wondergroup.example"})  
+@ComponentScan(basePackages={"com.wondergroup.example"})  //指定自动扫描的包路径
 public class Application{
 	
 	public static void main(String[] args) {
