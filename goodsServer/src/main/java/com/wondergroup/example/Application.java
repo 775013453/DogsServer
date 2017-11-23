@@ -32,7 +32,7 @@ public class Application{
         registrationBean.setFilter(httpReqFilter); 
         List<String> urlPatterns = new ArrayList<String>();
         //指定过滤器过滤的urlPatterns,同web.xml下的url-pattern功能一样
-        urlPatterns.add("/com/*");
+        urlPatterns.add("/*");
         registrationBean.setUrlPatterns(urlPatterns);
         return registrationBean;  
     }  
