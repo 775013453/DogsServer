@@ -10,8 +10,8 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.wondergroup.example.entity.SysConponTable;
 import com.wondergroup.example.handle.SysConponTable.dao.SysConponTableDao;
-import com.wondergroup.example.handle.SysConponTable.entity.SysConponTable;
 
 /**
   * @ClassName: SysConponTableDaoImpl

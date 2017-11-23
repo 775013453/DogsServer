@@ -6,8 +6,8 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.wondergroup.example.entity.SysConponTable;
 import com.wondergroup.example.handle.SysConponTable.dao.SysConponTableDao;
-import com.wondergroup.example.handle.SysConponTable.entity.SysConponTable;
 import com.wondergroup.example.handle.SysConponTable.service.SysConponTableService;
 
 

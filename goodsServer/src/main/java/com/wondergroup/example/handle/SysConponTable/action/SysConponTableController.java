@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.wondergroup.example.handle.SysConponTable.entity.SysConponTable;
+import com.wondergroup.example.entity.SysConponTable;
 import com.wondergroup.example.handle.SysConponTable.service.SysConponTableService;
 import com.wondergroup.example.util.JacksonUtil;
 
