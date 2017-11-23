@@ -1,3 +1,5 @@
+package com.wondergroup.example;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +18,7 @@ import com.wondergroup.example.filter.HttpReqFilter;
 
 @EnableAutoConfiguration
 @Controller
-@ComponentScan(basePackages={"com.wondergroup"})  
+@ComponentScan(basePackages={"com.wondergroup.example"})  
 public class Application{
 	
 	public static void main(String[] args) {
